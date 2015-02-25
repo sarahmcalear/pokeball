@@ -5,7 +5,7 @@ var $randomPokemon, // page element references (set on load below...)
     $pokeballs,
     $pokeballListEl;
 
-// Below are the functions necessary to creating the HTML for a Pokemon
+// Below are the functions necessary to create the HTML for a Pokemon
 // object on the screen. You need to call the first function with a
 // JS object that has the attributes id, name, pkdx_id, and image_url
 // (at least), and a string name of who can catch it
@@ -37,13 +37,13 @@ var $templatePokemonLarge = function(attributes, person) {
   return $template;
 }
 
+// Attach and template methods for new pokeballs and new pokemon in pokeballs!
 var attachPokeball = function(attributes) {
   // call your pokeball template and then append it where it should go
 }
 var $templatePokeball = function(attributes) {
   // create a small jQuery template for pokéballs
 }
-
 var attachSmallPokemonTemplate = function(attributes, elementAppendedTo) {
   // call your small template and then append it where it should go
 }
@@ -52,6 +52,7 @@ var $templatePokemonSmall = function(attributes) {
   // to insert into your Poké ball!
 }
 
+// Click methods 
 var catchPokemon = function(e) {
   $chosen_player = $('.chosen').children().first();
   $pokemon       = $(e.target).parent();
@@ -61,7 +62,6 @@ var catchPokemon = function(e) {
 
   console.log($chosen_player.data('name') + ' --> ' + $pokemon.data('rid'));
 }
-
 
 // these methods change the chosen pokeball and return whose pokeball it is
 var iChoseNext = function() {
@@ -97,6 +97,15 @@ $(document).ready(function() {
   $('#generate-random-poke').on('click', function(e) {
     // get a random pokemon from the database and
     // attach it to the DOM (with the large template)
+    $.ajax({
+      url:  '/pokemons?random=true',
+      type: 'GET',
+      // data: { id: ... },
+      dataType: 'json'
+    }).done(function(data){
+      // console.log(data);
+      attachLargePokemonTemplate(data);
+    });
   });
 });
 
