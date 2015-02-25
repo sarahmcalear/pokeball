@@ -3,9 +3,14 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = Pokemon.all
+
+    @pokemons = @pokemons.sample if params[:random]
+
+    render json: @pokemons
   end
 
   def show
+    render json: @pokemon
   end
 
   def create
