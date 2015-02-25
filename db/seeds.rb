@@ -1,4 +1,5 @@
 Pokemon.destroy_all
+Pokeball.destroy_all
 
 include PokemonsHelper
 
@@ -18,3 +19,11 @@ pokedex.each do |id|
   end
   i+=1
 end
+
+Pokeball.create(name: 'Phil').pokemons << Pokemon.find_by(name: 'Pikachu')
+Pokeball.create(name: 'PJ').pokemons << Pokemon.find_by(name: 'Jigglypuff')
+Pokeball.create(name: 'Travis').pokemons << Pokemon.find_by(name: 'Bulbasaur')
+Pokeball.create(name: 'J-Rad').pokemons << Pokemon.find_by(name: 'Squirtle')
+sarah = Pokeball.create(name: 'Sarah')
+sarah.pokemons << Pokemon.find_by(name: 'Eevee')
+sarah.pokemons << Pokemon.find_by(name: 'Jirachi')
