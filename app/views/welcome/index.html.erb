@@ -1,9 +1,26 @@
-<h1>Welcome to your Poké Ball</h1>
-
-<div class="random-poke">
-  <p>random pokemon here</p>
+<div class="jumbotron">
+  <h1>Welcome to your Poké Ball</h1>
+  <div class="jumbotron-content row">
+    <div class="random-button col-md-7">
+      <p>To catch a Pokémon, first you need to make one appear. Press here to find a random Pokémon.</p>
+      <center>
+        <button type="button" class="btn btn-lg btn-danger">Random Pokémon!</button>
+      </center>
+    </div>
+    <div class="random-poke col-md-4" id="random-poke">
+    </div>
+  </div>
 </div>
 
-<div class="poke-ball">
-  <p>pokemon you catch</p>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="panel panel-primary poke-ball">
+      <div class="panel-heading">
+        <h3 class="panel-title">Pokémon you caught</h3>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
 </div>
