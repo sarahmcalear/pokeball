@@ -10,7 +10,8 @@ module PokemonsHelper
   def get_pokemon(id)
     begin
       pokemon    = Pokegem.get_obj('pokemon', id)
-      image_path = Pokegem.get_obj('sprite', pokemon.pkdx_id).image
+      sprite_id  = pokemon.sprites.last["resource_uri"].split('/').last.to_i
+      image_path = Pokegem.get_obj('sprite', sprite_id).image
 
       Pokemon.create(
         pkdx_id:     pokemon.pkdx_id,
