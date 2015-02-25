@@ -1,16 +1,18 @@
 <div class="poke jumbotron">
   <center>
-    <h1>Welcome to your Poké Ball</h1>
+    <h1>Welcome to the Arena!</h1>
     <div class="jumbotron-content row">
-      <div class="random-button col-sm-7">
+      <div class="random-button col-sm-6">
         <p>To catch a Pokémon, first you need to make one appear. Press here to find a random Pokémon.</p>
         <center>
           <button type="button" class="btn btn-lg btn-danger" id="generate-random-poke">Random Pokémon!</button>
         </center>
       </div>
-      <div class="random-poke col-sm-4 empty animated fadeIn">
-        <center id="show-random-poke">
-          <!-- placeholder for $templatePokemonLarge -->
+      <div class="col-sm-6">
+        <center>
+          <div class="random-poke empty animated fadeIn" id="show-random-poke">
+            <!-- placeholder for $templatePokemonLarge -->
+          </div>
         </center>
       </div>
     </div>
@@ -19,7 +21,7 @@
 
 <div class="row poke-ball">
   <center>
-    <div class="col-sm-4 pokeball-col">
+    <div class="col-sm-4 pokeball-col text-left">
       <div class="panel panel-primary" id="phil-pokeball">
         <div class="panel-image">
           <%= image_tag 'pokeball.png', width: '80', height: '80', class: 'pokeball-img' %>
@@ -33,7 +35,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 pokeball-col">
+    <div class="col-sm-4 pokeball-col text-left">
       <div class="panel panel-success" id="pj-pokeball">
         <div class="panel-image">
           <%= image_tag 'pokeball.png', width: '80', height: '80', class: 'pokeball-img' %>
@@ -47,7 +49,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 pokeball-col">
+    <div class="col-sm-4 pokeball-col text-left">
       <div class="panel panel-danger" id="trav-pokeball">
         <div class="panel-image">
           <%= image_tag 'pokeball.png', width: '80', height: '80', class: 'pokeball-img' %>
@@ -61,7 +63,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 pokeball-col">
+    <div class="col-sm-4 pokeball-col text-left">
       <div class="panel panel-info" id="sarah-pokeball">
         <div class="panel-image">
           <%= image_tag 'pokeball.png', width: '80', height: '80', class: 'pokeball-img' %>
@@ -75,7 +77,7 @@
       </div>
     </div>
 
-    <div class="col-sm-4 pokeball-col">
+    <div class="col-sm-4 pokeball-col text-left">
       <div class="panel panel-warning" id="jrad-pokeball">
         <div class="panel-image">
           <%= image_tag 'pokeball.png', width: '80', height: '80', class: 'pokeball-img' %>

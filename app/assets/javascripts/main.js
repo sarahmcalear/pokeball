@@ -21,7 +21,7 @@ var $templatePokemonLarge = function(attributes) {
 
 var attachLargePokemonTemplate = function(attributes) {
   clearRandomPokemon();
-  $randomPokemon.parent().removeClass('empty');
+  $randomPokemon.removeClass('empty');
   $pokemon = $templatePokemonLarge(attributes);
   $randomPokemon.append($pokemon);
 }
