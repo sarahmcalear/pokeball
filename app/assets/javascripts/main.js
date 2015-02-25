@@ -97,15 +97,6 @@ $(document).ready(function() {
   $('#generate-random-poke').on('click', function(e) {
     // get a random pokemon from the database and
     // attach it to the DOM (with the large template)
-    $.ajax({
-      url:  '/pokemons?random=true',
-      type: 'GET',
-      // data: { id: ... },
-      dataType: 'json'
-    }).done(function(data){
-      // console.log(data);
-      attachLargePokemonTemplate(data);
-    });
   });
 });
 
