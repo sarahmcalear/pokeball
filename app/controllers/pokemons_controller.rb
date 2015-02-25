@@ -5,7 +5,11 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
 
     @pokemons = @pokemons.sample if params[:random]
-
+    
+    if params[:pokeball_id]
+      @pokemons = @pokemons.joins(:pokeballs).merge( Pokeball.where id: params[:pokeball_id] )
+    end
+    
     render json: @pokemons
   end
 
