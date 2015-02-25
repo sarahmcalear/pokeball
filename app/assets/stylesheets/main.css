@@ -1,0 +1,11 @@
+.jumbotron-content {
+  margin-top: 2em;
+}
+.random-button, .random-poke {
+  padding: 1em;
+}
+.random-poke {
+  /*border: 1px dashed dimgray;*/
+  /*border-radius: 2em;*/
+  height: 200px;
+}
