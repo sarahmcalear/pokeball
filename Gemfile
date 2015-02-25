@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'typhoeus'
 gem 'pokegem'
+gem 'colorize'
 
 group :development, :test do
   gem 'pry-rails'
