@@ -20,10 +20,12 @@ pokedex.each do |id|
   i+=1
 end
 
+# Pokeball.create(name: 'PJ').pokemons << Pokemon.find_by(name: 'Jigglypuff')
+# Pokeball.create(name: 'Travis').pokemons << Pokemon.find_by(name: 'Bulbasaur')
+# Pokeball.create(name: 'J-Rad').pokemons << Pokemon.find_by(name: 'Squirtle')
+
 Pokeball.create(name: 'Phil').pokemons << Pokemon.find_by(name: 'Pikachu')
-Pokeball.create(name: 'PJ').pokemons << Pokemon.find_by(name: 'Jigglypuff')
-Pokeball.create(name: 'Travis').pokemons << Pokemon.find_by(name: 'Bulbasaur')
-Pokeball.create(name: 'J-Rad').pokemons << Pokemon.find_by(name: 'Squirtle')
 sarah = Pokeball.create(name: 'Sarah')
 sarah.pokemons << Pokemon.find_by(name: 'Eevee')
 sarah.pokemons << Pokemon.find_by(name: 'Jirachi')
+sarah.pokemons << Pokemon.find_by(name: 'Snorlax')

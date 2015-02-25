@@ -7,8 +7,7 @@ class PokeballsController < ApplicationController
   end
 
   def show
-
-    render json: {pokeball: @pokeball, pokemon: @pokeball.pokemons}
+    render json: {pokeball: @pokeball, pokemons: @pokeball.pokemons}
   end
 
   def create

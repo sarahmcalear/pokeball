@@ -6,8 +6,15 @@ class PokemonsController < ApplicationController
 
     @pokemons = @pokemons.sample if params[:random]
     
+    # nested index...
     if params[:pokeball_id]
-      @pokemons = @pokemons.joins(:pokeballs).merge( Pokeball.where id: params[:pokeball_id] )
+      # (#joins)#merge filters one set of AR models (known as an AR relation)
+      # by their association(s)! Another (worse) way to write this would be:
+      #
+      # @pokemons = Pokeball.find(params[:pokeball_id]).pokemons
+
+      @pokemons = @pokemons.joins(:pokeballs)
+                           .merge( Pokeball.where id: params[:pokeball_id] )
     end
     
     render json: @pokemons

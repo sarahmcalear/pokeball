@@ -39,7 +39,25 @@
   position: absolute;
   right: 20px;
   top: -20px;
+  opacity: 0.4;
+  filter: none;
+  -webkit-filter: grayscale(75%);
+  -moz-filter:    grayscale(75%);
+  -ms-filter:     grayscale(75%);
+  -o-filter:      grayscale(75%);
+  transition: 0.45s;
+}
+.chosen .pokeball-img {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  -moz-filter:    grayscale(0%);
+  -ms-filter:     grayscale(0%);
+  -o-filter:      grayscale(0%);
+  transition: 0.45s;
 }
 .pokeball-col {
   max-width: 480px;
+}
+.new-pokeball {
+  padding-top: 20px;
 }
