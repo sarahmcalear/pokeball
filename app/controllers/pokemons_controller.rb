@@ -5,7 +5,7 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
 
     @pokemons = @pokemons.sample if params[:random]
-    
+
     # nested index...
     if params[:pokeball_id]
       # (#joins)#merge filters one set of AR models (known as an AR relation)
@@ -16,7 +16,7 @@ class PokemonsController < ApplicationController
       @pokemons = @pokemons.joins(:pokeballs)
                            .merge( Pokeball.where id: params[:pokeball_id] )
     end
-    
+
     render json: @pokemons
   end
 
@@ -25,13 +25,11 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.new(pokemon_params)
+    newly_caught_pokemon = Pokemon.find params[:pokemon_id]
+    pokeball = Pokeball.find params[:pokeball_id]
+    pokeball.pokemons << newly_caught_pokemon
 
-    if @pokemon.save
-      render :show, status: :created, location: @pokemon
-    else
-      render json: @pokemon.errors, status: :unprocessable_entity
-    end
+    render json: pokeball
   end
 
   def update
@@ -43,7 +41,9 @@ class PokemonsController < ApplicationController
   end
 
   def destroy
-    @pokemon.destroy
+    pokemon = Pokemon.find params[:id]
+    Pokeball.find(params["pokeball_id"]).pokemons.delete(pokemon)
+
     head :no_content
   end
 
